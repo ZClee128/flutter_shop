@@ -3,16 +3,17 @@ import 'dart:async';
 import 'dart:io';
 import '../config/service_url.dart';
 
-
-Future post(String url,Map formData) async {
+Future post(String url, Map formData) async {
   try {
     Response response;
     Dio dio = Dio();
-    dio.options.contentType = ContentType.parse("application/x-www-form-urlencoded");
-    response = await dio.post(url,data: formData);
+    dio.options.contentType =
+        ContentType.parse("application/x-www-form-urlencoded");
+    response = await dio.post(url, data: formData);
     if (response.statusCode == 200) {
-      return response.data;
-    }else{
+      print("pppppp$response");
+      return response;
+    } else {
       throw Exception('后端接口出现异常，请检测代码和服务器情况.........');
     }
   } catch (e) {
@@ -20,8 +21,17 @@ Future post(String url,Map formData) async {
   }
 }
 
+Future get(String url, Map formData) async {
+  try {
+    Response response;
+    response = await Dio().get(url, queryParameters: formData);
+    return response.data;
+  } catch (e) {
+    return print(e);
+  }
+}
 
 Future getHomePageContent() {
-  var formData = {'lon':'115.02932','lat':'35.76189'};
+  var formData = {'page': '1'};
   return post(servicePath['homePageContext'], formData);
 }
