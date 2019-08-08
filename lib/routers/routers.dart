@@ -2,6 +2,7 @@
 
 import 'package:fluro/fluro.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_shop/login/login_router.dart';
 import 'package:flutter_shop/pages/404.dart';
 import 'package:flutter_shop/pages/home_page.dart';
 import 'package:flutter_shop/pages/webview_page.dart';
@@ -35,7 +36,7 @@ class Routes {
 
     _listRouter.clear();
     /// 各自路由由各自模块管理，统一在此添加初始化
-    
+    _listRouter.add(LoginRouter());
     // 初始化路由
     _listRouter.forEach((routerProvider){
       routerProvider.initRouter(router);
