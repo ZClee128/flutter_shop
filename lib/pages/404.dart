@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_shop/widgets/app_bar.dart';
 import 'package:flutter_shop/widgets/state_layout.dart';
 
 class WidgetNotFound extends StatelessWidget {
@@ -7,8 +8,8 @@ class WidgetNotFound extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: Text('页面不存在'),
+      appBar: MyAppBar(
+        centerTitle: '页面不存在',
       ),
       body: StateLayout(
         type: StateType.account,

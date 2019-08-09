@@ -10,7 +10,7 @@ import 'package:flutter_shop/util/image_utils.dart';
 import 'package:flutter_shop/util/utils.dart';
 import 'package:flutter_swiper/flutter_swiper.dart';
 import 'package:rxdart/rxdart.dart';
-
+import 'package:flutter_screenutil/flutter_screenutil.dart' as screen;
 class IndexPage extends StatefulWidget {
   IndexPage({Key key}) : super(key: key);
 
@@ -68,6 +68,7 @@ class _IndexPageState extends State<IndexPage> {
   }
   @override
   Widget build(BuildContext context) {
+    screen.ScreenUtil.instance = screen.ScreenUtil(width: 750, height: 1334)..init(context);
     return Material(
       child: Stack(
         children: <Widget>[

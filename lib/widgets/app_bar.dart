@@ -15,7 +15,7 @@ class MyAppBar extends StatelessWidget implements PreferredSizeWidget {
 
   const MyAppBar({
     Key key,
-    this.backgroundColor: Colors.white,
+    this.backgroundColor: Colours.app_main,
     this.title: "",
     this.centerTitle: "",
     this.backImg: "assets/images/ic_back_black.png",

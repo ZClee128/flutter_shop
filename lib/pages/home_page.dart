@@ -2,6 +2,7 @@ import 'dart:convert';
 
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:flutter_shop/widgets/app_bar.dart';
 import 'package:flutter_swiper/flutter_swiper.dart';
 import '../service/service_method.dart';
 
@@ -30,8 +31,9 @@ class _HomePageState extends State<HomePage> with AutomaticKeepAliveClientMixin{
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: Text('百姓生活'),
+      appBar: MyAppBar(
+        centerTitle: '首页',
+        isBack: false,
       ),
       body: FutureBuilder(
         future: getHomePageContent(),
@@ -52,7 +54,7 @@ class _HomePageState extends State<HomePage> with AutomaticKeepAliveClientMixin{
           }
         },
       ),
-      // body: Text(homePageContent),
+      // body: Text('ces'),
     );
   }
 }

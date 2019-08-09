@@ -5,6 +5,7 @@ import 'package:flutter_shop/login/login_router.dart';
 import 'package:flutter_shop/res/colors.dart';
 import 'package:flutter_shop/res/styles.dart';
 import 'package:flutter_shop/routers/fluro_navigator.dart';
+import 'package:flutter_shop/routers/routers.dart';
 import 'package:flutter_shop/util/utils.dart';
 import 'package:flutter_shop/widgets/app_bar.dart';
 import 'package:flutter/foundation.dart';
@@ -59,7 +60,7 @@ class _LoginPageState extends State<LoginPage> {
 
   void _login() {
     Flustars.SpUtil.putString(Constant.phone, _nameController.text);
-    // NavigatorUtils.push(context, )
+    NavigatorUtils.push(context, Routes.home);
   }
 
   @override
@@ -69,7 +70,7 @@ class _LoginPageState extends State<LoginPage> {
         isBack: false,
         actionName: '验证码登录',
         onPressed: () {
-          // NavigatorUtils.push(context, path)
+          NavigatorUtils.push(context, LoginRouter.smsLoginPage);
         },
       ),
       body: defaultTargetPlatform == TargetPlatform.iOS
